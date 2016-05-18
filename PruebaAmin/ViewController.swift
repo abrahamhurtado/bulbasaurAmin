@@ -10,8 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var nombreBulbasaur : String = ""
+    @IBOutlet weak var bulbasaurLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Bulbasaur"
+        bulbasaurLabel.text = nombreBulbasaur
         // Do any additional setup after loading the view, typically from a nib.
     }
 

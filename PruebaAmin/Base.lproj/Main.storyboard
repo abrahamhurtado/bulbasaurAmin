@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Uvk-zL-HdC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="PruebaAmin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,98 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P47-ow-Pl3">
+                                <rect key="frame" x="252" y="276" width="97" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDB-WU-XUx">
+                                <rect key="frame" x="230" y="332" width="141" height="30"/>
+                                <state key="normal" title="Obtén tu calificación"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q3V-VF-UDA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2DE-Az-h93">
+                                <rect key="frame" x="243" y="370" width="115" height="30"/>
+                                <state key="normal" title="Cambiar de vista"/>
+                                <connections>
+                                    <segue destination="Yzt-Lb-raI" kind="show" id="VYg-wn-78V"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XDB-WU-XUx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D0c-u2-dJh"/>
+                            <constraint firstItem="2DE-Az-h93" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fp4-8F-OzT"/>
+                            <constraint firstItem="P47-ow-Pl3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L35-GS-Ba0"/>
+                            <constraint firstItem="P47-ow-Pl3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bUF-Jl-tlg"/>
+                            <constraint firstItem="XDB-WU-XUx" firstAttribute="top" secondItem="P47-ow-Pl3" secondAttribute="bottom" constant="8" id="d78-P5-Ua4"/>
+                            <constraint firstItem="2DE-Az-h93" firstAttribute="top" secondItem="XDB-WU-XUx" secondAttribute="bottom" constant="8" id="tCZ-km-0db"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="x8Q-KZ-vKA"/>
+                    <connections>
+                        <outlet property="botonObtenerCalificacion" destination="P47-ow-Pl3" id="5jQ-By-0Ww"/>
+                        <outlet property="calificacionLabel" destination="P47-ow-Pl3" id="moz-5T-oVt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1377" y="439"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Cfu-YS-4Sj">
+            <objects>
+                <viewController id="Yzt-Lb-raI" customClass="ViewController" customModule="PruebaAmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VEk-fb-s2M"/>
+                        <viewControllerLayoutGuide type="bottom" id="TPS-3E-WOr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BTD-JP-CZz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWW-Sw-phK">
+                                <rect key="frame" x="258" y="279" width="85" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qWW-Sw-phK" firstAttribute="centerY" secondItem="BTD-JP-CZz" secondAttribute="centerY" id="YZy-w7-swm"/>
+                            <constraint firstItem="qWW-Sw-phK" firstAttribute="centerX" secondItem="BTD-JP-CZz" secondAttribute="centerX" id="kHS-u6-xQw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bulbasaurLabel" destination="qWW-Sw-phK" id="mwQ-kf-pw5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uvG-xb-hCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2052" y="439"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0hV-IZ-aCF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uvk-zL-HdC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Voa-eP-om6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kM2-d1-aR2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x9b-Rg-l7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="439"/>
         </scene>
     </scenes>
 </document>
